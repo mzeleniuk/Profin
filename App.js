@@ -1,25 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 'use strict';
 
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-export default class App extends Component<{}> {
+class SearchPage extends Component<{}> {
+  static navigationOptions = {
+    title: 'Profin'
+  };
+
   render() {
     return (
-      React.createElement(Text, {style: styles.description}, "Search for houses to buy!")
+      <Text style={styles.description}>Search for houses to buy</Text>
     );
-  }
+  };
 }
 
 const styles = StyleSheet.create({
@@ -30,3 +24,9 @@ const styles = StyleSheet.create({
     marginTop: 65
   }
 });
+
+const App = StackNavigator({
+  Home: { screen: SearchPage }
+});
+
+export default App;
