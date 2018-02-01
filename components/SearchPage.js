@@ -33,6 +33,8 @@ export default class SearchPage extends Component<{}> {
                      placeholder='Search via name or postcode'/>
           <Button onPress={() => {}} color='#48BBEC' title='Search'/>
         </View>
+
+        <Image source={require('../resources/house.png')} style={styles.image}/>
       </View>
     );
   }
@@ -65,5 +67,10 @@ const styles = StyleSheet.create({
     borderColor: '#48BBEC',
     borderRadius: 2,
     color: '#48BBEC'
+  },
+  image: {
+    width: 217,
+    height: 138,
+    marginTop: 20
   }
 });
