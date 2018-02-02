@@ -16,6 +16,18 @@ export default class SearchPage extends Component<{}> {
     title: 'Profin'
   };
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchTerm: 'London'
+    };
+  };
+
+  onSearchTermChanged = (event) => {
+    this.setState({ searchTerm: event.nativeEvent.text });
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -30,6 +42,8 @@ export default class SearchPage extends Component<{}> {
         <View style={styles.flowRight}>
           <TextInput underlineColorAndroid={'transparent'}
                      style={styles.searchInput}
+                     value={this.state.searchTerm}
+                     onChange={this.onSearchTermChanged}
                      placeholder='Search via name or postcode'/>
           <Button onPress={() => {}} color='#48BBEC' title='Search'/>
         </View>
