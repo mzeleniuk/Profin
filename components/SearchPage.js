@@ -98,6 +98,7 @@ export default class SearchPage extends Component<{}> {
                      style={styles.searchInput}
                      value={this.state.searchTerm}
                      onChange={this.onSearchTermChanged}
+                     onSubmitEditing={this.onSearchPressed}
                      placeholder='Search via name or postcode'/>
           <Button onPress={this.onSearchPressed} color='#48BBEC' title='Search'/>
         </View>
