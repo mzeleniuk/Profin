@@ -8,7 +8,8 @@ import {
   View,
   Button,
   ActivityIndicator,
-  Image
+  Image,
+  Keyboard
 } from 'react-native';
 
 function urlForQueryAndPage(key, value, pageNumber) {
@@ -77,6 +78,8 @@ export default class SearchPage extends Component<{}> {
 
   onSearchPressed = () => {
     const query = urlForQueryAndPage('place_name', this.state.searchTerm, 1);
+    Keyboard.dismiss();
+
     this.executeQuery(query);
   };
 
